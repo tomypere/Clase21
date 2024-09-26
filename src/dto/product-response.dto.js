@@ -9,4 +9,3 @@ export const productResponseDto = (product) => {
       category: product.category,
     };
   };
-  

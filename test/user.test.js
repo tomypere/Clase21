@@ -6,15 +6,6 @@ import { expect } from "chai";
 mongoose.connect(envConfig.MONGO_URL);
 
 describe("Test User Repository", () => {
-    // esta función ejecuta todos los test
-
-    // before(() => {
-    //     console.log("Se ejecuta antes de todos los test");
-    // })
-
-    // beforeEach(() => {
-    //     console.log("Se ejecuta antes de cada test que tenemos");
-    // })
 
     it("Obtener todos los usuarios", async () => {
         const users = await userRepository.getAll();
@@ -82,7 +73,5 @@ describe("Test User Repository", () => {
         mongoose.disconnect();
     });
 
-    // afterEach(() => {
-    //     console.log("Se ejecuta al finalizar cada test");
-    // })
+
 });

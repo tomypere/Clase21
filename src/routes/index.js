@@ -1,4 +1,3 @@
-
 import { Router } from "express";
 import cartsRouters from "./carts.routes.js";
 import productsRouters from "./products.routes.js";

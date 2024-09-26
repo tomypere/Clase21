@@ -1,27 +1,3 @@
-// const suma = (...nums) => {
-//   if(nums.length === 0) return 0
-
-//   let validInput = true;
-
-//   for(let i = 0; i < nums.length; i++) {
-//     if(typeof nums[i] !== "number") {
-//       validInput = false;
-//     }
-//   }
-//   if(!validInput) return null;
-
-//   let result = 0;
-
-//   for(let i = 0; i < nums.length; i++) {
-//     result += nums[i];
-//   }
-
-//   return result;
-
-// };
-
-// Refactorización
-
 const suma = (...nums) => {
     if (nums.length === 0) return 0;
   
@@ -31,8 +7,7 @@ const suma = (...nums) => {
   };
   
   let testsPasados = 0;
-  
-  // 1 - La función suma debe devolver un null si algún parámetro no es un número
+
   console.log("Test 1: La función suma debe devolver un null si algún parámetro no es un número");
   let resultTest1 = suma("30", 3);
   
@@ -42,8 +17,7 @@ const suma = (...nums) => {
   } else {
     console.log(`Test 1 fallado, se recibió: ${resultTest1}, se esperaba: null`);
   }
-  
-  // 2 - La función suma debe devolver 0 si no se le pasa ningún parámetro
+
   console.log("Test 2: La función suma debe devolver 0 si no se le pasa ningún parámetro");
   let resultTest2 = suma();
   
@@ -53,8 +27,7 @@ const suma = (...nums) => {
   } else {
     console.log(`Test 2 fallado, se recibió: ${resultTest2}, se esperaba: 0`);
   }
-  
-  // 3 - La función suma debe poder sumar dos números correctamente
+
   console.log("Test 3: La función suma debe poder sumar dos números correctamente");
   
   let resultTest3 = suma(10, 5);
@@ -66,7 +39,6 @@ const suma = (...nums) => {
     console.log(`Test 3 fallado, se recibió: ${resultTest3}, se esperaba: 15`);
   }
   
-  // 4 - La función suma debe poder sumar debe poder hacer la suma de varios números
   console.log("Test 4: La función suma debe poder sumar debe poder hacer la suma de varios números");
   
   let resultTest4 = suma(10, 5, 2, 5);
@@ -79,7 +51,6 @@ const suma = (...nums) => {
   }
   
   console.log("");
-  // Verificamos si pasaron todos los test
   if (testsPasados === 4) {
     console.log("Todos los test pasaron");
   } else {

@@ -8,11 +8,11 @@ export const userLoginValidator = [
   .notEmpty().withMessage("La contraseña es obligatoria"),
   (req, res, next) => {
     const errors = validationResult(req);
-    // Verificar si hay algún error
     if (!errors.isEmpty()) {
       const formatErrors = errors.array().map( e => {
         return { msg: e.msg, data: e.path }
       } )
+
       return res.status(400).json({ status: "error", errors: formatErrors });
     }
 

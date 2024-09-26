@@ -27,7 +27,6 @@ const initializePassport = () => {
     "register",
     new LocalStrategy(
       { passReqToCallback: true, usernameField: "email" },
-
       async (req, username, password, done) => {
         try {
           const { first_name, last_name, email, age, role } = req.body;
@@ -117,7 +116,6 @@ const initializePassport = () => {
       }
     )
   );
-
 
   passport.serializeUser((user, done) => {
     done(null, user._id);

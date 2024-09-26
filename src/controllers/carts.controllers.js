@@ -80,9 +80,7 @@ const purchaseCart = async (req, res) => {
     const { cid } = req.params;
     const cart = await cartsServices.getCartById(cid);
     if (!cart) return res.status(404).json({ status: "Error", msg: `No se encontró el carrito con el id ${cid}` });
-    // Obtener el total del carrito
     const total = await cartsServices.purchaseCart(cid);
-    // Crear el ticket
     const ticket = await ticketServices.createTicket(req.user.email, total);
 
     res.status(200).json({ status: "success", payload: ticket });

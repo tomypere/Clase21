@@ -14,7 +14,6 @@ const login = async (req, res) => {
   try {
     const user = req.user;
     const token = createToken(user);
-    // Guardamos el token en una cookie
     res.cookie("token", token, { httpOnly: true });
     const userDto = userResponseDto(user);
     return res.status(200).json({ status: "success", payload: userDto, token });

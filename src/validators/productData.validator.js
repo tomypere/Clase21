@@ -52,10 +52,10 @@ export const productDataValidator = [
         const formatErrors = errors.array().map( e => {
           return { msg: e.msg, data: e.path }
         } )
-  
-        // si error no viene vacío
+
         return res.status(400).json({ status: "error", errors: formatErrors });
       }
+
       next();
     },
 ];
